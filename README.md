@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OpsLane
 
-## Getting Started
+### Fulfillment Operations Hub
 
-First, run the development server:
+OpsLane is a centralized fulfillment operations dashboard designed for small e-commerce teams.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+It brings together order tracking, priority management, inventory visibility, warehouse stock, and operational issue handling in one place.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Problem
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Small e-commerce operations often rely on spreadsheets, shared folders, and informal communication to manage fulfillment.
 
-## Learn More
+This can make it difficult to:
 
-To learn more about Next.js, take a look at the following resources:
+- Track the current status of orders
+- Identify priority orders quickly
+- Detect delayed orders
+- Monitor inventory across multiple warehouses
+- Identify low-stock products
+- Track stock that needs to be transferred
+- Record and resolve operational issues
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Solution
 
-## Deploy on Vercel
+OpsLane provides a single operational workspace where a fulfillment team can monitor and act on these areas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Operations Dashboard
+- Total order overview
+- Priority order count
+- Delayed order count
+- Open issue count
+- Fulfillment pipeline
+- Attention-required operational items
+
+#### Order Management
+- Search orders by order ID, customer, courier, or product
+- Filter by fulfillment status
+- Filter by priority
+- View individual order details
+- Track order progress through the fulfillment workflow
+
+#### Inventory Management
+- Product-level inventory visibility
+- Main and secondary warehouse stock
+- Reserved inventory
+- Available inventory
+- Low-stock identification
+- Transfer-required identification
+
+#### Issue Management
+- Centralized operational issue tracking
+- Issue priority and status
+- Related order information
+- Assigned team and location
+- Recommended actions
+- Resolve and reopen workflow
+
+#### Global Search
+Search across:
+
+- Orders
+- Products
+- Operational issues
+
+---
+
+## Fulfillment Workflow
+
+OpsLane represents the fulfillment process through the following stages:
+
+**Received → Processing → Picking → Packing → Staging → Shipped**
+
+Delayed orders are also identified separately for operational attention.
+
+---
+
+## Technology Stack
+
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Lucide React
+- Next.js App Router
+
+---
+
+## Project Structure
+
+```text
+fulfillflow/
+│
+├── app/
+│   ├── inventory/
+│   ├── issues/
+│   ├── orders/
+│   ├── layout.js
+│   ├── page.js
+│   └── globals.css
+│
+├── components/
+│   ├── Header.js
+│   ├── InventoryTable.js
+│   ├── IssueTable.js
+│   ├── OrderTable.js
+│   ├── OrderTimeline.js
+│   ├── Sidebar.js
+│   ├── StatCard.js
+│   └── StatusBadge.js
+│
+├── data/
+│   ├── issues.js
+│   ├── orders.js
+│   └── products.js
+│
+└── README.md
