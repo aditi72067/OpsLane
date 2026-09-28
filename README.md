@@ -94,7 +94,7 @@ Delayed orders are also identified separately for operational attention.
 ## Project Structure
 
 ```text
-fulfillflow/
+opslane/
 │
 ├── app/
 │   ├── inventory/
